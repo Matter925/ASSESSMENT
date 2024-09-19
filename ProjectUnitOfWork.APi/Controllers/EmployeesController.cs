@@ -30,9 +30,13 @@ public class EmployeesController : ControllerBase
     public async Task<ActionResult<IEnumerable<EmployeeDto>>> Get()
     {
 
-        var entities = await _unitOfWork.Employees.GetAllAsync();
-
-        return Ok(entities);
+        var employees = await _unitOfWork.Employees.GetAllAsync();
+        if (employees == null || !employees.Any())
+        {
+            return NotFound(); // Or handle empty case
+        }
+        var employeeDtos = _mapper.Map<IEnumerable<EmployeeDto>>(employees);
+        return Ok(employeeDtos);
     }
 
     [AllowAnonymous]

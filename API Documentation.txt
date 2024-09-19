@@ -1,0 +1,96 @@
+1. Get All Employees
+Endpoint: GET /api/employees
+Description: Fetches a list of all employees.
+Request: None
+Response:
+200 OK: List of EmployeeDto objects.
+[
+  {
+    "employeeId": 1,
+    "name": "John Doe",
+    "department": "IT"
+    "salary"    " 5000
+  },
+  ...
+]
+-------------------------------------------------------------------------
+2. Get Employee by ID
+Endpoint: GET /api/employees/{id}
+Description: Fetches a single employee by its ID.
+Request:
+Path Parameter: id (integer)
+Response:
+200 OK: EmployeeDto object.
+{
+  "employeeId": 1,
+    "name": "John Doe",
+    "department": "IT"
+    "salary"    " 5000
+}
+
+404 Not Found:
+{
+  "statusCode": 404,
+  "message": "ItemWithThisIdIsn'tFound"
+}
+
+---------------------------------------------------------------
+3. Create Employee
+Endpoint: POST /api/employees
+Description: Creates a new employee.
+Request:
+Body: EmployeeCreateDto
+{
+    "name": "John Doe",
+    "department": "IT"
+    "salary"    " 5000
+}
+Response:
+200 OK: Success message with created employee's ID.
+{
+  "statusCode": 200,
+  "message": "ItemIsCreatedSuccessfully",
+  "id": 1
+}
+
+-------------------------------------------------------------------
+
+4. Update Employee
+Endpoint: PUT /api/employees/{id}
+Description: Updates an existing employee's information.
+Request:
+Path Parameter: id (integer)
+Body: EmployeeUpdateDto
+{
+    "name": "John Doe",
+    "department": "IT"
+    "salary"    " 5000
+}
+
+Response:
+200 OK: Success message.
+{
+  "statusCode": 200,
+  "message": "ItemIsUpdatedSuccessfully"
+}
+
+404 Not Found:
+{
+  "statusCode": 404,
+  "message": "ItemWithThisIdIsn'tFound"
+}
+
+-----------------------------------------------------------------------
+
+5. Delete Employee
+Endpoint: DELETE /api/employees/{id}
+Description: Deletes an employee by its ID.
+Request:
+Path Parameter: id (integer)
+Response:
+200 OK: Success message.
+
+{
+  "statusCode": 200,
+  "message": "ItemIsDeletedSuccessfully"
+}
