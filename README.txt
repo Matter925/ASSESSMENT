@@ -10,3 +10,17 @@ Code Editor/IDE: Install a code editor or IDE such as Visual Studio, Visual Stud
 Running the Application Locally
 1. Clone the Repository
 If your project is hosted in a version control system like Git, clone the repository to your local machine:
+
+git clone <repository-url>
+cd <repository-directory>
+
+
+2. Set Up the Database
+a. Install Database Server
+Make sure you have the database server installed on your local machine. For example:
+
+SQL Server: Download and install SQL Server Express.
+
+3.Create Migrations
+
+4.Update the database
